@@ -23,3 +23,14 @@ Route::get('index',[
 Route::get('addnewproduct',[
 'uses'=>'PageController@addnewproduct'
 ]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -45,6 +45,23 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
+            
+              @if (Route::has('login'))
+                    @auth
+                        <a  href="{{ url('/home') }}">Home</a>
+                    @else
+                        <li>
+                           <a class='nav-link' href="{{ route('login') }}">Login</a>
+                        </li>
+
+                        @if (Route::has('register'))
+                           <li> 
+                              <a class="nav-link" href="{{ route('register') }}">Register</a>
+                           </li>
+                        @endif
+                    @endauth
+            @endif
+          
           </ul>
         </div>
       </div>
@@ -53,7 +70,7 @@
     @yield('content')
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-2 bg-dark" style="left: 0px; bottom: 0px; position: fixed; width: 100%">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
       </div>
